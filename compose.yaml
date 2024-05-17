@@ -68,15 +68,4 @@ services:
       - "1080:1080"
       - "1025:1025"
     restart: unless-stopped
-  quart_server:  # Added quart_server service definition
-    build:
-      context: .
-      dockerfile: Dockerfile.quart
-    command: [ "hypercorn", "api:app", "-b", "0.0.0.0:5057" ]
-    ports:
-      - "5057:5057"
-    environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-    depends_on:
-      - server
 
