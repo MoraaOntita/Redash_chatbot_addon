@@ -5,6 +5,10 @@ compose_build: .env
 
 up:
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose up -d --build
+	docker compose up -d redis postgres quart_server nginx
+	docker compose exec -u postgres postgres psql postgres --csv -1tqc "SELECT datname FROM pg_database WHERE datname = 'youtube_data'" 2> /dev/null \
+| grep -q "youtube_data" || make create_database
+	docker compose up -d --build
 
 test_db:
 	@for i in `seq 1 5`; do \
@@ -12,6 +16,9 @@ test_db:
 		else echo "postgres initializing..."; sleep 5; fi \
 	done
 	docker compose exec postgres sh -c 'psql -U postgres -c "drop database if exists tests;" && psql -U postgres -c "create database tests;"'
+
+create_youtube_database:
+	docker compose exec -u postgres postgres psql postgres -c "CREATE DATABASE youtube_data;"
 
 create_database: .env
 	docker compose run server create_db
