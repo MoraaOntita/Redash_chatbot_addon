@@ -17,9 +17,10 @@ The Redash Chatbot LLM integrates OpenAI's ChatGPT model with your Redash dashbo
 ## Setup and Installation
 1. Clone the Repository:
    
-   `git clone [git@github.com:10ac-group10/Redash_Chatbot_LLM.git](https://github.com/MoraaOntita/Redash_chatbot_addon.git)`
-   
-   `cd Redash_Chatbot_LLM`
+```bash
+git clone git@github.com:10ac-group10/Redash_Chatbot_LLM.git
+cd Redash_Chatbot_LLM
+```
 
 3. Create Virtual ENvironment and Install Dependencies:
    ` `
