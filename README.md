@@ -8,7 +8,11 @@ The Redash Chatbot LLM integrates OpenAI's ChatGPT model with your Redash dashbo
 
 **Integration with Redash:** Designed to seamlessly integrate with Redash, this project allows users to fully utilize the capabilities of this popular open-source data visualization tool.
 
+**Docker Support:** The project leverages Docker for easy setup and deployment. This makes it easy for users to get the project up and running on their own systems.
+
 ## Requirements Before Installation:
+- Docker: This is used for creating, deploying, and running applications by using containers.
+- Docker Compose: This is a tool for defining and managing multi-container Docker applications.
 - Node.js: This is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 - Yarn: This is a package manager that doubles down as project manager.
 * Python: The project requires a Python version that is greater than or equal to 3.9 and less than or equal to 3.10.2.
