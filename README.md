@@ -52,8 +52,31 @@ cd Redash_Chatbot_LLM
    ```
    
    Replace ```your_openai_api_key``` with your OpenAI API key.
+   
    **Get your free OpenAI API key** - [OpenAI](https://platform.openai.com/docs/api-reference/authentication)
+   
    **Note:** Follow the best practices by not commiting the .env file to the repository.
 
-5. Build the application
-
+6. Build the application:
+   Run the following commands to get the container up and running and start the application:
+   ```bash
+   yarn
+   ```
+   
+   ```bash
+   make build
+   ```
+   
+   ```bash
+   make compose_build
+   ```
+   
+   ```bash
+   make up
+   ```
+   
+   If running all the above commands successfully, in future you can then simplify the process by running the below command to start the application.
+   
+   ```bash
+   make run
+   ``` 
