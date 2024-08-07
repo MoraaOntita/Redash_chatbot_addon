@@ -52,7 +52,7 @@ cd Redash_Chatbot_LLM
    ```
    
    Replace ```your_openai_api_key``` with your OpenAI API key.
-   **Get your free OpenAI API key** - [OpenAI] (https://platform.openai.com/docs/api-reference/authentication)
+   **Get your free OpenAI API key** - [OpenAI](https://platform.openai.com/docs/api-reference/authentication)
    **Note:** Follow the best practices by not commiting the .env file to the repository.
 
 5. Build the application
