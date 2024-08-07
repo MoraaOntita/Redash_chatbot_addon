@@ -57,7 +57,7 @@ cd Redash_Chatbot_LLM
    
    **Note:** Follow the best practices by not commiting the .env file to the repository.
 
-6. Build the application:
+5. Build the application:
    Run the following commands to get the container up and running and start the application:
    ```bash
    yarn
@@ -80,3 +80,14 @@ cd Redash_Chatbot_LLM
    ```bash
    make run
    ``` 
+6.Access the Application
+   
+   Open your browser and navigate to ```http://localhost:8081``` to access the Redash homepage.
+   
+   Note: The port 8081 is access to Nginx, which is the reverse proxy server for the Redash application. The Redash application runs on port 5000, but it is not directly accessible from the browser. The Nginx server acts as a reverse proxy server that forwards requests from the browser to the Redash application running on port 5000.
+
+7.Login to Redash
+
+After accessing the Redash setup page, you will be prompted to sign up.
+Here is how the redash setup page looks like:
+
