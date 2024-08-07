@@ -22,9 +22,38 @@ git clone git@github.com:10ac-group10/Redash_Chatbot_LLM.git
 cd Redash_Chatbot_LLM
 ```
 
-3. Create Virtual ENvironment and Install Dependencies:
-   ` `
-4. Install Frontend Dependencies:
-   ` `
-5. 
+2. Create Virtual ENvironment and Install Dependencies:
+
+   ```bash
+   python3.10 -m venv venv
+   source venv/bin/activate  # For Unix or MacOS
+   venv\Scripts\activate     # For Windows
+   pip install -r requirements.txt
+   
+   ```
+3. Install Frontend Dependencies:
+
+   ```bash
+   poetry add openai
+   ```
+
+    ```bash
+   yarn add react-icons
+   ```
+
+   ```bash
+   yarn add react-syntax-highlighter
+   ```
+   
+4. Environment Variables:
+   Create a ```.env``` file in the root directory and add the following environment variables:   
+   ```bash
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+   
+   Replace ```your_openai_api_key``` with your OpenAI API key.
+   **Get your free OpenAI API key** - [OpenAI] (https://platform.openai.com/docs/api-reference/authentication)
+   **Note:** Follow the best practices by not commiting the .env file to the repository.
+
+5. Build the application
 
