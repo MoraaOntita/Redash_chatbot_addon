@@ -22,7 +22,7 @@ The Redash Chatbot LLM integrates OpenAI's ChatGPT model with your Redash dashbo
 1. Clone the Repository:
    
 ```bash
-git clone git@github.com:10ac-group10/Redash_Chatbot_LLM.git
+git clone https://github.com/MoraaOntita/Redash_chatbot_addon.git
 cd Redash_Chatbot_LLM
 ```
 
@@ -32,7 +32,6 @@ cd Redash_Chatbot_LLM
    python3.10 -m venv venv
    source venv/bin/activate  # For Unix or MacOS
    venv\Scripts\activate     # For Windows
-   pip install -r requirements.txt
    
    ```
 3. Install Frontend Dependencies:
@@ -52,12 +51,22 @@ cd Redash_Chatbot_LLM
 4. Environment Variables:
    Create a ```.env``` file in the root directory and add the following environment variables:   
    ```bash
-   OPENAI_API_KEY=your_openai_api_key
+   GROQ_API_KEY=your_openai_api_key
    ```
    
-   Replace ```your_openai_api_key``` with your OpenAI API key.
+   Generate a secret and place it in the```.env``` file in the root directory and add the following environment variables:   
+   ```bash
+   REDASH_COOKIE_SECRET=your_redash_cookie_secret
+   ```
+   To generate use this command:
+
+   ```bash
+   openssl rand -hex 32
+   ```
    
-   **Get your free OpenAI API key** - [OpenAI](https://platform.openai.com/docs/api-reference/authentication)
+   Replace ```your_openai_api_key``` with your OpenAI API key and ```your_redash_cookie_secret``` with the REDASH_COOKIE_SECRET you have generated.
+   
+   **Get your free OpenAI API key** - [Groq]([https://platform.openai.com/docs/api-reference/authentication](https://console.groq.com/keys))
    
    **Note:** Follow the best practices by not commiting the .env file to the repository.
 
@@ -78,12 +87,7 @@ cd Redash_Chatbot_LLM
    ```bash
    make up
    ```
-   
-   If running all the above commands successfully, in future you can then simplify the process by running the below command to start the application.
-   
-   ```bash
-   make run
-   ``` 
+
 6.Access the Application
    
    Open your browser and navigate to ```http://localhost:8081``` to access the Redash homepage.
