@@ -4,9 +4,19 @@ import './chatbox.less'
 import Chat from '@/services/chat';
 import { IoCopy } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa6";
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+// Import the light build
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-async-light';
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import python from 'refractor/lang/python';
+import javascript from 'refractor/lang/javascript';
+import sql from 'refractor/lang/sql';
 import copy from 'copy-to-clipboard';
+
+// Register the languages
+SyntaxHighlighter.registerLanguage('python', python);
+SyntaxHighlighter.registerLanguage('javascript', javascript);
+SyntaxHighlighter.registerLanguage('sql', sql);
 
 
 export default function ChatBox() {
@@ -145,8 +155,8 @@ export default function ChatBox() {
                                         </div>                            
                                     </div>
                                     <SyntaxHighlighter
-                                      language={part.firstWord}
-                                      style={docco}
+                                      language={part.firstWord.toLowerCase()}
+                                      style={prism}
                                       className='x-container'
                                       customStyle={{
                                         fontSize: '14px',
